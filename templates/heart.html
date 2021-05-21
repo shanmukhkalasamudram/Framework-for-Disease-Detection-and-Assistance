@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">-->
+<!--<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+<style>
+   * {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+
+input[type=text], select, textarea {
+  width: 55%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 0%;
+  display: inline-block;
+  margin-bottom:10px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.background {
+  background-image: url(https://prashanthhospitals.org/wp-content/uploads/2017/04/prashanth-hospitals-heart-attack-treatments.gif);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: solid black;
+}
+
+input[type=submit] {
+  background-color: #1e90ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: solid black;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+  border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h1 {
+color: white;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+nav {
+background-color: solid black;
+}
+
+</style>
+</head>
+<body>
+<div class="background">
+    <div class="blur">
+<nav>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul>
+             <li>
+               <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+             </li>
+             <li >
+              <a class="nav-link" href="{{ url_for('services') }}">Our Services</a>
+            </li>
+
+               <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('chatbotPage') }}">Virtual Assisstant</a>
+            </li>
+               <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('hospital') }}">Nearby hospitals</a>
+            </li>
+               <li >
+               <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
+             </li>
+             <li >
+                <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
+             </li>
+             <li >
+                <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('pneumoniaPage') }}">Pneumonia</a>
+              </li>
+           </ul>
+         </div>
+       </nav>
+
+<div class="row">
+<!--    <div class="col-md-2"></div>-->
+    <div class="col-md-8">
+        <center><h1>Heart Disease Predictor</h1></center>
+        <div class="card card-body">
+            <center>
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="age" placeholder="age">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="sex" placeholder="sex(Male:1, female:0)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="cp" placeholder="chest pain type"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="trestbps" placeholder="resting blood pressure in mm Hg">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="chol" placeholder="serum cholestoral in mg/dl">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="fbs" placeholder="fasting blood sugar 120 mg/dl(1 = true; 0 = false)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="restecg" placeholder="resting electrocardiographic results">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="thalach" placeholder="maximum heart rate achieved">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="exang" placeholder="exercise induced angina (1 = yes; 0 = no)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="oldpeak" placeholder="ST depression induced by exercise relative to rest">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="slope" placeholder="the slope of the peak exercise ST segment">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="ca" placeholder="number of major vessels (0-3) colored by flourosopy">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid black;" class="form-control" type="text" name="thal" placeholder="3 = normal; 6 = fixed defect; 7 = reversable defect">
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <center><input type="submit" class="btn btn-info btn-block" value="Predict"></center>
+            </form>
+                </center>
+        </div>
+    </div>
+
+</div>
+</div>
+    </div>
+    </body>
+</html>

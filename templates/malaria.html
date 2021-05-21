@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">-->
+<!--<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+<style>
+   * {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+
+input[type=text], select, textarea {
+  width: 55%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-left: 0%;
+  display: inline-block;
+  margin-bottom:10px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.background {
+  background-image: url(https://thumbs.gfycat.com/AdmiredConcernedAmphiuma-max-1mb.gif);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: solid black;
+}
+
+input[type=submit] {
+  background-color: #1e90ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 1px;
+  background-color: solid black;
+  padding: 2px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+  border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+h1 {
+color: white;
+}
+
+h3 {
+color: white;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+nav {
+background-color: solid black;
+}
+
+img{
+color: white;
+}
+
+</style>
+</head>
+<body>
+<div class="background">
+    <div class="blur">
+<nav>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul>
+             <li>
+               <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+             </li>
+             <li >
+              <a class="nav-link" href="{{ url_for('services') }}">Our Services</a>
+            </li>
+
+               <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('chatbotPage') }}">Virtual Assisstant</a>
+            </li>
+               <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('hospital') }}">Nearby hospitals</a>
+            </li>
+               <li >
+               <a class="nav-link" href="{{ url_for('diabetesPage') }}">Diabetes</a>
+             </li>
+             <li >
+                <a class="nav-link" href="{{ url_for('heartPage') }}">Heart</a>
+             </li>
+             <li >
+                <a class="nav-link" href="{{ url_for('kidneyPage') }}">Kidney</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('liverPage') }}">Liver</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('malariaPage') }}">Malaria</a>
+              </li>
+              <li >
+                <a class="nav-link" href="{{ url_for('pneumoniaPage') }}">Pneumonia</a>
+              </li>
+           </ul>
+         </div>
+       </nav>
+<script>
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result)
+                        .width(500)
+                        .height(500);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+        <center><h1>Malaria Predictor</h1></center>
+
+            <center><h3>Please upload the image of the cell</h3></center>
+            <form action="{{ url_for('malariapredictPage') }}" method="POST" enctype="multipart/form-data">
+                <center>
+                <input onchange="readURL(this);" type="file" name="image" placeholder="Upload Image">
+                <br>
+                <br>
+                <img class="img-fluid" id="blah" src="#" alt="UPLOADED IMAGE WILL APPEAR HERE" />
+                <br>
+                <br>
+                    <center><input  type="submit"></center>
+                </center>
+            </form>
+    </div>
+</div>
+</body>
+</html>

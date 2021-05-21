@@ -1,0 +1,278 @@
+
+    
+    {% extends 'main.html' %}
+{% block content %}
+{% if message %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endif %}
+    
+    
+
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Our Services</h1>
+            <span>We are over 20 years of experience</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="single-services">
+      <div class="container">
+        <div class="row" id="tabs">
+          
+          <div class="col-md-8">
+            <section class='tabs-content'>
+              <article id='tabs-1'>
+                <img src="{{ url_for('static', filename='assets/images/service_01.jpg') }}" alt="">
+                <h4>Diabetes</h4>
+                <p>Diabetes mellitus, commonly known as diabetes, is a metabolic disease that causes high blood sugar. The hormone insulin moves sugar from the blood into your cells to be stored or used for energy. With diabetes, your body either doesn’t make enough insulin or can’t effectively use the insulin it does make.
+                <br><br>
+                A rare condition called diabetes insipidus is not related to diabetes mellitus, although it has a similar name. It’s a different condition in which your kidneys remove too much fluid from your body.
+
+                Each type of diabetes has unique symptoms, causes, and treatments. Learn more about how these types differ from one another.
+                  <br><br>
+                <center> <a href="{{ url_for('diabetesPage') }}"> Click here, to get report  </a></center>
+              </p>
+              </article>
+              <br>
+
+              <article id='tabs-2'>
+                <img src="{{ url_for('static', filename='assets/images/service_02.jpg') }}" alt="">
+                <h4>Kidney</h4>
+                <p>The kidneys filter waste and excess fluid from the blood. As kidneys fail, waste builds up.<br><br>
+                  Symptoms develop slowly and aren't specific to the disease. Some people have no symptoms at all and are diagnosed by a lab test.
+                  Medication helps manage symptoms. In later stages, filtering the blood with a machine (dialysis) or a transplant may be required.
+                  <br><br>
+                  <center> <a href="{{ url_for('kidneyPage') }}"> Click here, to get report  </a></center>
+                  
+                </p>
+                </article>        <br>
+              <article id='tabs-3'>
+                <img src="{{ url_for('static', filename='assets/images/service_03.jpg') }}" alt="">
+                <h4>Liver</h4>
+
+                <p>Liver disease is any disturbance of liver function that causes illness. The liver is responsible for many critical functions within the body and should it become diseased or injured, the loss of those functions can cause significant damage to the body. Liver disease is also referred to as hepatic disease.
+                  <br><br>
+                  <center> <a href="{{ url_for('liverPage') }}"> Click here, to get report  </a></center>
+                  </p>
+                </article>
+                <br>
+              <article id='tabs-4'>
+
+                <img src="{{ url_for('static', filename='assets/images/single_service_04.jpg') }}" alt="">
+                <h4>Malaria</h4>
+                <p>
+                  A disease caused by a plasmodium parasite, transmitted by the bite of infected mosquitoes.
+The severity of malaria varies based on the species of plasmodium.<br><br>
+Symptoms are chills, fever and sweating, usually occurring a few weeks after being bitten.
+People travelling to areas where malaria is common typically take protective drugs before, during and after their trip. Treatment includes antimalarial drugs.
+<br><br>
+<center> <a href="{{ url_for('malariaPage') }}"> Click here, to get report  </a></center>
+                </p>
+                </article>
+              <article id='tabs-5'>
+                <img src="{{ url_for('static', filename='assets/images/single_service_05.jpg') }}" alt="">
+                <h4>Pneumonia </h4>
+                <p>Infection that inflames air sacs in one or both lungs, which may fill with fluid.
+                  With pneumonia, the air sacs may fill with fluid or pus. The infection can be life-threatening to anyone, but particularly to infants, children and people over 65.
+                  Symptoms include a cough with phlegm or pus, fever, chills and difficulty breathing.<br><br>
+                  Antibiotics can treat many forms of pneumonia. Some forms of pneumonia can be prevented by vaccines.
+                  <br><br>
+<center> <a href="{{ url_for('pneumoniaPage') }}"> Click here, to get report  </a></center>
+                </p>
+
+                  <h2>Heart diseases</h2>
+                  <p><dt>SOME COMMON SYMPTOMS:</dt>
+                      <ul>
+                  <li>Chest pain (angina). If you feel heavy</li>
+                  <li>Nausea or stomach upset.</li>
+                  <li>Sweating. Even when you haven't been exercising.</li>
+                  <li>Feeling weak or tired.</li>
+                  <br>
+<dt>PRECAUTIONS/REMEDIES:</dt>
+                  <li>Healthy diet</li>
+                  <li>Exercise regularly</li>
+                  <li>Say no to drugs</li>
+                  <li>Have Herbal remedies such as Ginger, garlic, green tea, sweet potato, strawberry etc</li>
+                  <br>
+                  <dt>BLOGS</dt>
+                  <li><a href="https://intermountainhealthcare.org/blogs/topics/heart/2017/02/heart-failure-diagnosis-is-not-a-death-sentence-treatment-options-better-than-ever/
+">https://intermountainhealthcare.org/blogs/topics/heart/2017/02/heart-failure-diagnosis-is-not-a-death-sentence-treatment-options-better-than-ever/</a></li>
+              </ul>
+                  <li><a href="https://intermountainhealthcare.org/blogs/topics/heart/2021/01/heart-disease-explained-signs-symptoms-and-how-to-reduce-your-risk/">https://intermountainhealthcare.org/blogs/topics/heart/2021/01/heart-disease-explained-signs-symptoms-and-how-to-reduce-your-risk/</a> </li>
+                  <li><a href="https://intermountainhealthcare.org/blogs/topics/heart/2020/06/7-simple-steps-for-a-healthier-life-and-heart/">https://intermountainhealthcare.org/blogs/topics/heart/2020/06/7-simple-steps-for-a-healthier-life-and-heart/</a></li>
+                  <li><a href="https://intermountainhealthcare.org/blogs/topics/heart/2020/02/how-to-know-if-you-are-having-a-heart-attack/">https://intermountainhealthcare.org/blogs/topics/heart/2020/02/how-to-know-if-you-are-having-a-heart-attack/</a></li>
+</p>
+                  <br>
+                  <br>
+                  <h2>MALARIA</h2>
+                  <p>
+                  <dt>Prevention</dt>
+                  <ul>
+                      <li>Always use mosquito nets over and around the bed</li>
+                  <li>Prefer wearing long sleeved clothes that cover your arms and legs</li>
+                  <li>Keep your door and windows locked, especially during the evenings.</li>
+                  <li>Try wearing loose clothes instead of tight ones</li>
+                  <li>Stay in the house during evening</li>
+                  <li>Switch the fan on at night</li>
+                  <li>Do not travel to the areas with malaria outbreak</li>
+                  <li>Give proper attention and care to infants and small kids to protect them from  mosquito bite</li>
+                  </ul>
+                  </p>
+                  <br>
+                  <dt>Remedies</dt>
+                  <ul>
+                      <li>HOLY BASIL</li>
+                      <li>CITRUS FRUIT</li>
+                      <li>CINNAMON</li>
+                      <li>GRAPEFRUIT</li>
+                  </ul>
+                  <br>
+                  <dt>Blogs</dt>
+                  <ul>
+                      <li><a href="https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184">https://www.mayoclinic.org/diseases-conditions/malaria/symptoms-causes/syc-20351184</a> </li>
+                      <li><a href="https://www.healthline.com/health/malaria#complications">https://www.healthline.com/health/malaria#complications</a> </li>
+                  </ul>
+                  <br>
+                  <br>
+
+                  <h2>Pneumonia</h2>
+                  <dt>Risk</dt>
+                  <ul>
+                      <li>Living in a hospice or institutionalized setting</li>
+                      <li>Using a ventilator</li>
+                      <li>Frequent hospitalizations</li>
+                      <li>A weakened immune system</li>
+                      <li>A progressive lung disease, such as COPD</li>
+                      <li>Asthma</li>
+                      <li>Heart disease</li>
+                      <li>Smoking cigarettes</li>
+                  </ul>
+                  <br>
+                  <dt>Prevention</dt>
+                  <ul>
+                      <li>Avoid smoking.</li>
+                      <li>Wash your hands often in warm, soapy water.</li>
+                      <li>Use an alcohol-based hand sanitizer when you can’t wash your hands.</li>
+                      <li>Avoid exposure to people who are ill whenever possible.</li>
+                      <li>Get enough rest.</li>
+                      <li>Eat a healthy diet that includes lots of fruits, vegetables, fiber, and lean protein.</li>
+                  </ul>
+                  <br>
+                  <dt>Remedies</dt>
+                  <ul>
+                      <li>Take rest</li>
+                      <li>Drink plenty of fluids</li>
+                      <li>Do not over strain the body</li>
+                  </ul>
+                  <br>
+                  <dt>Blogs</dt>
+                  <ul>
+                      <li><a href="https://www.healthline.com/health/pneumonia#complications">https://www.healthline.com/health/pneumonia#complications</a> </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <h2>Liver</h2>
+                  <dt>Avoid</dt>
+                  <ul>
+                      <li>HIGH CARBONATED FOOD</li>
+                      <li>ALCOHOL</li>
+                      <li>FATTY LIVER</li>
+                      <li>CIRRHOSIS</li>
+                      <li>HEPATITIS A,,B,C,D,R(Jaundice)</li>
+                  </ul>
+                  <br>
+                  <dt>Remedies</dt>
+                  <ul>
+                      <li>MILK THISTLE</li>
+                      <li>APPLE CIDER VINEGAR</li>
+                      <li>AMLA</li>
+                      <li>TURMERIC</li>
+                      <li>PAPAYA</li>
+                      <li>LICORICE</li>
+                  </ul>
+                  <br>
+                  <dt>Blog</dt>
+                  <li><a href="https://www.mayoclinic.org/diseases-conditions/liver-problems/symptoms-causes/syc-20374502">https://www.mayoclinic.org/diseases-conditions/liver-problems/symptoms-causes/syc-20374502</a> </li>
+              <br>
+                  <br>
+                  <h2>Kidney</h2>
+                  <dt>When to get tested</dt>
+                  <ul>
+                      <li>If you are at risk, get tested for CKD regularly. Ask your doctor to test your blood or urine.</li>
+                      <li>Find it early. Treat it early.</li>
+                      <li>If you have diabetes, get tested yearly.</li>
+                  </ul>
+                  <br>
+                  <dt>Prevention</dt>
+                  <ul>
+                      <li>Lose weight if you are overweight.</li>
+                      <li>Get active. Physical activity helps control blood sugar levels.</li>
+                      <li>Quit smoking.</li>
+                      <li>Getting a checkup? Make sure to get your kidneys checked too.</li>
+                      <li>Take medications as directed.</li>
+                      <li>Keep your blood pressure below 140/90, or ask your doctor what the best blood pressure target is for you.</li>
+                      <li>If you have diabetes, stay in your target blood sugar range as much as possible.</li>
+                      <li>Stay in your target cholesterol range.</li>
+                      <li>Eat foods lower in salt.</li>
+                      <li>Eat more fruits and vegetables.</li>
+                  </ul>
+                  <br>
+                  <dt>Remedies</dt>
+                  <ul>
+                      <li>Improved lifestyle changes (e.g. healthy eating)</li>
+                      <li>Meeting with a dietitian to make a kidney-healthy eating plan</li>
+                      <li>Proper use of medications (e.g. drugs to lower blood pressure)</li>
+                      <li>Avoiding conditions or exposures that can harm the kidneys or cause a sudden drop in kidney function (called acute kidney injury)</li>
+                  </ul>
+                  <br>
+                  <dt>Blog</dt>
+                  <ul>
+                      <li><a href="https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521">https://www.mayoclinic.org/diseases-conditions/chronic-kidney-disease/symptoms-causes/syc-20354521</a> </li>
+                  <li><a href="https://www.healthline.com/health/kidney-disease#symptoms">https://www.healthline.com/health/kidney-disease#symptoms</a> </li>
+                  </ul>
+                  <br>
+                  <br>
+                  <h2>Diabetes</h2>
+                  <dt>Remedies</dt>
+                  <ul>
+                      <li>ALOE VERA</li>
+                      <li>BARLEY</li>
+                      <li>LOW SALT</li>
+                      <li>BITTER GOURD</li>
+                  </ul>
+                  <br>
+                  <dt>Precaution</dt>
+                  <ul>
+                      <li>GET PLENTY OF FIBRE</li>
+                      <li>GET WHOLE GRAINS</li>
+                      <li>BALANCE DIET</li>
+                      <li>EXERCISE REGULARLY</li>
+                  </ul>
+                  <br>
+                  <dt>Visit a doctor</dt>
+                  <ul>
+                      <li>You're age 45 or older</li>
+                      <li>You're an overweight adult of any age, with one or more additional risk factors for diabetes, <br>such as a family history of diabetes, a personal history of prediabetes or an inactive lifestyle</li>
+                  </ul>
+                  <br>
+                  <dt>Blogs</dt>
+                  <ul>
+                      <li><a href="https://www.diabeticfoodie.com/">https://www.diabeticfoodie.com/</a> </li>
+                      <li><a href="https://www.diabetesselfmanagement.com/">https://www.diabetesselfmanagement.com/</a> </li>
+                  </ul>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock %}
+
+   
+
